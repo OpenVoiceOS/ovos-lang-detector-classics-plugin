@@ -1,0 +1,4 @@
+pycld2
+pycld3
+langdetect
+fastlang
