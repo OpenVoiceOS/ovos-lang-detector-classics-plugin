@@ -9,6 +9,10 @@ Provides plugins for the following packages:
 
 Additionally a "voter" plugin is provided, it will use all the above and average predictions, each model compensates for the other bias balancing each other out better and increasing accuracy
 
+
+> **NOTE**: The voter plugin can be used with **any** lang detect plugin, not only the ones above
+
+
 ## Configuration
 
 in `mycroft.conf` 
