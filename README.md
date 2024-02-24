@@ -2,18 +2,19 @@
 
 Provides plugins for the following packages:
 
+- https://github.com/google/cld3 - CLD3 is a neural network model for language identification
 - https://github.com/aboSamoor/pycld2 - CLD2 is a Naïve Bayesian classifier, detects over 80 languages
-- https://github.com/bsolomon1124/pycld3 - CLD3 is a neural network model for language identification
 - https://github.com/kootenpv/fastlang - Built upon the nltk stopwords, without depending on nltk itself.
 - https://github.com/Mimino666/langdetect - Detect language of a text using naive Bayesian filter
 
-Additionally a "voter" plugin is provided, it will use all the above and average predictions, each model compensates for the other bias balancing each other out better and increasing accuracy
+Additionally a "voter" plugin is provided, it will use other plugins and average predictions, each model compensates for the other bias balancing each other out better and increasing accuracy
 
 
 > **NOTE**: The voter plugin can be used with **any** lang detect plugin, not only the ones above
 
-
 ## Configuration
+
+To use `ovos-lang-detector-plugin-cld3` the additional dependency `gcld3` needs to be installed
 
 in `mycroft.conf` 
 

@@ -18,8 +18,8 @@ def required(requirements_file):
 
 PLUGIN_ENTRY_POINT = (
     'ovos-lang-detector-plugin-voter=ovos_lang_detector_classics_plugin:VotingLangDetectPlugin',
+    'ovos-lang-detector-plugin-cld3=ovos_lang_detector_classics_plugin.cld3:Cld3Detector',
     'ovos-lang-detector-plugin-cld2=ovos_lang_detector_classics_plugin.neon_cld2:Pycld2Detector',
-    'ovos-lang-detector-plugin-cld3=ovos_lang_detector_classics_plugin.neon_cld3:Pycld3Detector',
     'ovos-lang-detector-plugin-langdetect=ovos_lang_detector_classics_plugin.neon_langdetect:LangDetectDetector',
     'ovos-lang-detector-plugin-fastlang=ovos_lang_detector_classics_plugin.neon_fastlang:FastLangDetector'
 )

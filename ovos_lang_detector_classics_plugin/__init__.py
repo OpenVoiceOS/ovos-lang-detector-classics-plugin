@@ -8,7 +8,6 @@ class VotingLangDetectPlugin(LanguageDetector):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.weights = self.config.get("weights", {
-            "ovos-lang-detector-plugin-cld3": 0.8,
             "ovos-lang-detector-plugin-cld2": 0.8,
             "ovos-lang-detector-plugin-langdetect": 1.0,
             "ovos-lang-detector-plugin-fastlang": 1.0,
