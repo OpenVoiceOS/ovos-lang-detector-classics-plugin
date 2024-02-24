@@ -32,7 +32,9 @@ setup(
     license='apache-2',
     author='JarbasAI',
     include_package_data=True,
-    install_requires=required("requirements.txt"),
+    extras_require={
+        "all": required("requirements.txt")
+    },
     author_email='jarbasai@mailfence.com',
     description='average plugin classifications for language detection',
     entry_points={'neon.plugin.lang.detect': PLUGIN_ENTRY_POINT}

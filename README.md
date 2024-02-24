@@ -7,14 +7,15 @@ Provides plugins for the following packages:
 - https://github.com/kootenpv/fastlang - Built upon the nltk stopwords, without depending on nltk itself.
 - https://github.com/Mimino666/langdetect - Detect language of a text using naive Bayesian filter
 
-Additionally a "voter" plugin is provided, it will use other plugins and average predictions, each model compensates for the other bias balancing each other out better and increasing accuracy
+Additionally, a "voter" plugin is provided, it will use other plugins and average predictions, each model compensates for the other bias balancing each other out better and increasing accuracy
 
+To use use the plugins above, `pip install ovos-lang-detector-plugin-voter[all]`, if you dont need the plugins except for voter plugin skip the `[all]` flag
 
 > **NOTE**: The voter plugin can be used with **any** lang detect plugin, not only the ones above
 
+
 ## Configuration
 
-To use `ovos-lang-detector-plugin-cld3` the additional dependency `gcld3` needs to be installed
 
 in `mycroft.conf` 
 

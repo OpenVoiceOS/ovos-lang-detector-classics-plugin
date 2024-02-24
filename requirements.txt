@@ -1,3 +1,4 @@
 pycld2
+gcld3
 langdetect
 fastlang
