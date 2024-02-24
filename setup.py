@@ -26,7 +26,7 @@ PLUGIN_ENTRY_POINT = (
 
 setup(
     name='ovos-lang-detector-classics-plugin',
-    version='0.0.0a3',
+    version='0.0.1a1',
     packages=['ovos_lang_detector_classics_plugin'],
     url='https://github.com/OpenVoiceOS/ovos-lang-detector-classics-plugin',
     license='apache-2',
