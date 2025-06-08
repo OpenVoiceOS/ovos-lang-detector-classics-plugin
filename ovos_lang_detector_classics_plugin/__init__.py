@@ -1,5 +1,7 @@
 from ovos_plugin_manager.language import load_lang_detect_plugin
 from ovos_plugin_manager.templates.language import LanguageDetector
+from ovos_utils import classproperty
+from typing import Set
 
 
 class VotingLangDetectPlugin(LanguageDetector):
@@ -21,7 +23,7 @@ class VotingLangDetectPlugin(LanguageDetector):
         plugs = {}
         for plug_name in self.weights:
             try:
-                plugs[plug_name] =  load_lang_detect_plugin(plug_name)()
+                plugs[plug_name] = load_lang_detect_plugin(plug_name)()
             except:
                 raise RuntimeError(f"Failed to load {plug_name}")
         return plugs
@@ -42,6 +44,18 @@ class VotingLangDetectPlugin(LanguageDetector):
         else:
             counts = {k: sum(v) / len(v) for k, v in counts.items()}
         return counts
+
+    @classproperty
+    def available_languages(cls) -> Set[str]:
+        """
+        Return languages supported by this detector implementation in this state.
+        This should be a set of languages this detector is capable of recognizing.
+        This property should be overridden by the derived class to advertise
+        what languages that engine supports.
+        Returns:
+            Set[str]: A set of language codes supported by this detector.
+        """
+        return set()  # TODO
 
 
 if __name__ == "__main__":
