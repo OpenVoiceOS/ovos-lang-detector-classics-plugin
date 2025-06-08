@@ -1,6 +1,7 @@
 # taken from https://github.com/NeonGeckoCom/neon-lang-plugin-cld2
-from ovos_plugin_manager.templates.language import LanguageDetector
 import pycld2
+from ovos_plugin_manager.templates.language import LanguageDetector
+from ovos_utils import classproperty
 
 
 class Pycld2Detector(LanguageDetector):
@@ -44,7 +45,7 @@ class Pycld2Detector(LanguageDetector):
     def detect(self, text):
         if self.boost:
             return self.cl2_detect(text, hint_language=self.hint_language) or \
-                   self.default_language
+                self.default_language
         else:
             return self.cl2_detect(text) or self.default_language
 
@@ -60,3 +61,15 @@ class Pycld2Detector(LanguageDetector):
         for lang in data:
             langs[lang["lang_code"]] = lang["conf"]
         return langs
+
+    @classproperty
+    def available_languages(cls):
+        """
+        Return languages supported by this detector implementation in this state.
+        This should be a set of languages this detector is capable of recognizing.
+        This property should be overridden by the derived class to advertise
+        what languages that engine supports.
+        Returns:
+            Set[str]: A set of language codes supported by this detector.
+        """
+        return set()  # TODO
