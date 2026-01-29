@@ -2,4 +2,4 @@ pycld2
 gcld3
 langdetect
 fastlang
-ovos-plugin-manager>=2.1.0,<2.2.0
+ovos-plugin-manager>=2.2.0,<2.3.0
