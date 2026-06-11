@@ -12,7 +12,7 @@ authors = [{name = "JarbasAi", email = "jarbasai@mailfence.com"}]
 requires-python = ">=3.9"
 keywords = ["plugin", "lang", "detect", "OVOS", "OpenVoiceOS"]
 dependencies = [
-    "ovos-plugin-manager>=2.1.0,<2.2.0",
+    "ovos-plugin-manager>=2.1.0,<3.0.0",
 ]
 
 [project.optional-dependencies]
