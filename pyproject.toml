@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ovos-lang-detector-classics-plugin"
+dynamic = ["version"]
+description = "average plugin classifications for language detection"
+readme = "README.md"
+license = "Apache-2.0"
+authors = [{name = "JarbasAi", email = "jarbasai@mailfence.com"}]
+requires-python = ">=3.9"
+keywords = ["plugin", "lang", "detect", "OVOS", "OpenVoiceOS"]
+dependencies = [
+    "ovos-plugin-manager>=2.1.0,<2.2.0",
+]
+
+[project.optional-dependencies]
+all = [
+    "pycld2",
+    "gcld3",
+    "langdetect",
+    "fastlang",
+]
+
+[project.urls]
+Homepage = "https://github.com/OpenVoiceOS/ovos-lang-detector-classics-plugin"
+Repository = "https://github.com/OpenVoiceOS/ovos-lang-detector-classics-plugin"
+
+[project.entry-points."neon.plugin.lang.detect"]
+"ovos-lang-detector-plugin-voter" = "ovos_lang_detector_classics_plugin:VotingLangDetectPlugin"
+"ovos-lang-detector-plugin-cld3" = "ovos_lang_detector_classics_plugin.cld3:Cld3Detector"
+"ovos-lang-detector-plugin-cld2" = "ovos_lang_detector_classics_plugin.neon_cld2:Pycld2Detector"
+"ovos-lang-detector-plugin-langdetect" = "ovos_lang_detector_classics_plugin.neon_langdetect:LangDetectDetector"
+"ovos-lang-detector-plugin-fastlang" = "ovos_lang_detector_classics_plugin.neon_fastlang:FastLangDetector"
+
+[tool.setuptools.packages.find]
+include = ["ovos_lang_detector_classics_plugin*"]
+
+[tool.setuptools.dynamic]
+version = {attr = "ovos_lang_detector_classics_plugin.version.__version__"}
