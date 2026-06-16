@@ -22,12 +22,16 @@ all = [
     "langdetect",
     "fastlang",
 ]
+test = [
+    "pytest>=7.0.0,<9",
+    "pytest-timeout>=2.0.0",
+]
 
 [project.urls]
 Homepage = "https://github.com/OpenVoiceOS/ovos-lang-detector-classics-plugin"
 Repository = "https://github.com/OpenVoiceOS/ovos-lang-detector-classics-plugin"
 
-[project.entry-points."neon.plugin.lang.detect"]
+[project.entry-points."opm.lang.detect"]
 "ovos-lang-detector-plugin-voter" = "ovos_lang_detector_classics_plugin:VotingLangDetectPlugin"
 "ovos-lang-detector-plugin-cld3" = "ovos_lang_detector_classics_plugin.cld3:Cld3Detector"
 "ovos-lang-detector-plugin-cld2" = "ovos_lang_detector_classics_plugin.neon_cld2:Pycld2Detector"
@@ -35,6 +39,7 @@ Repository = "https://github.com/OpenVoiceOS/ovos-lang-detector-classics-plugin"
 "ovos-lang-detector-plugin-fastlang" = "ovos_lang_detector_classics_plugin.neon_fastlang:FastLangDetector"
 
 [tool.setuptools.packages.find]
+where = ["."]
 include = ["ovos_lang_detector_classics_plugin*"]
 
 [tool.setuptools.dynamic]
