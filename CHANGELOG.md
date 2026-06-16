@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.1a4](https://github.com/OpenVoiceOS/ovos-lang-detector-classics-plugin/tree/0.0.1a4) (2026-06-16)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-lang-detector-classics-plugin/compare/0.0.1a3...0.0.1a4)
+
+**Merged pull requests:**
+
+- chore: add missing shared CI workflows [\#13](https://github.com/OpenVoiceOS/ovos-lang-detector-classics-plugin/pull/13) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.0.1a3](https://github.com/OpenVoiceOS/ovos-lang-detector-classics-plugin/tree/0.0.1a3) (2026-06-11)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-lang-detector-classics-plugin/compare/0.0.1a2...0.0.1a3)
