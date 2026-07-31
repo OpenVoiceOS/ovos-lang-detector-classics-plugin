@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.1a5](https://github.com/OpenVoiceOS/ovos-lang-detector-classics-plugin/tree/0.0.1a5) (2026-07-31)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-lang-detector-classics-plugin/compare/0.0.1a4...0.0.1a5)
+
+**Merged pull requests:**
+
+- docs: rewrite README in Simplified Technical English [\#17](https://github.com/OpenVoiceOS/ovos-lang-detector-classics-plugin/pull/17) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.0.1a4](https://github.com/OpenVoiceOS/ovos-lang-detector-classics-plugin/tree/0.0.1a4) (2026-06-16)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-lang-detector-classics-plugin/compare/0.0.1a3...0.0.1a4)
