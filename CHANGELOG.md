@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.2a1](https://github.com/OpenVoiceOS/ovos-lang-detector-classics-plugin/tree/0.0.2a1) (2026-08-02)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-lang-detector-classics-plugin/compare/0.0.1a5...0.0.2a1)
+
+**Merged pull requests:**
+
+- fix: publish alphas to PyPI on merge [\#19](https://github.com/OpenVoiceOS/ovos-lang-detector-classics-plugin/pull/19) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.0.1a5](https://github.com/OpenVoiceOS/ovos-lang-detector-classics-plugin/tree/0.0.1a5) (2026-07-31)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-lang-detector-classics-plugin/compare/0.0.1a4...0.0.1a5)
