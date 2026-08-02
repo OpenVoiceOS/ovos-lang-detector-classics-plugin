@@ -1,0 +1,17 @@
+name: Stable Release
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  publish_stable:
+    uses: OpenVoiceOS/gh-automations/.github/workflows/publish-stable.yml@dev
+    secrets: inherit
+    with:
+      version_file: 'ovos_lang_detector_classics_plugin/version.py'
+      publish_pypi: true
+      publish_release: true
+      sync_dev: true
+      notify_matrix: true

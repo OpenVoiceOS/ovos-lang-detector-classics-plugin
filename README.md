@@ -1,21 +1,21 @@
 # Lang Classifier Classics
 
-Provides plugins for the following packages:
+This package provides OVOS language-detection plugins for four classic algorithms:
 
-- https://github.com/aboSamoor/pycld2 - CLD2 is a Naïve Bayesian classifier, detects over 80 languages
-- https://github.com/bsolomon1124/pycld3 - CLD3 is a neural network model for language identification
-- https://github.com/kootenpv/fastlang - Built upon the nltk stopwords, without depending on nltk itself.
-- https://github.com/Mimino666/langdetect - Detect language of a text using naive Bayesian filter
+- [google/cld3](https://github.com/google/cld3): CLD3 is a neural network model for language identification.
+- [aboSamoor/pycld2](https://github.com/aboSamoor/pycld2): CLD2 is a Naive Bayesian classifier. It detects over 80 languages.
+- [kootenpv/fastlang](https://github.com/kootenpv/fastlang): built on the NLTK stopword lists, without depending on NLTK itself.
+- [Mimino666/langdetect](https://github.com/Mimino666/langdetect): detects the language of a text with a naive Bayesian filter.
 
-Additionally a "voter" plugin is provided, it will use all the above and average predictions, each model compensates for the other bias balancing each other out better and increasing accuracy
+The package also provides a `VotingLangDetectPlugin`. This plugin runs the other plugins and averages their predictions. Each model has a different bias, so the average is usually more accurate than any single model. See [docs/algorithms.md](docs/algorithms.md) for details on each algorithm and the voting logic.
 
+To use the plugins above, run `pip install ovos-lang-detector-plugin-voter[all]`. If you only need the voter plugin, skip the `[all]` flag.
 
-> **NOTE**: The voter plugin can be used with **any** lang detect plugin, not only the ones above
-
+> **NOTE**: The voter plugin works with any lang-detect plugin, not only the ones listed above.
 
 ## Configuration
 
-in `mycroft.conf` 
+Add this to `mycroft.conf`:
 
 ```javascript
   "language": {
@@ -53,6 +53,16 @@ for utt in ["hello world",
             "era uma vez um assistente de voz"]:
     print(p.detect(utt))
 ```
+
+## Related projects
+
+- [OpenVoiceOS/ovos-plugin-manager](https://github.com/OpenVoiceOS/ovos-plugin-manager): defines the `LanguageDetector` base class these plugins implement.
+- [OpenVoiceOS/ovos-translate-server](https://github.com/OpenVoiceOS/ovos-translate-server): a server that exposes language detection and translation plugins over HTTP.
+
 ## Credits
 
-bundled package plugins originally from @NeonGeckoCom but never published
+The bundled plugins originally came from [NeonGeckoCom](https://github.com/NeonGeckoCom) but were never published on their own.
+
+## License
+
+Apache-2.0

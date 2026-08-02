@@ -1,5 +1,8 @@
 from ovos_plugin_manager.language import load_lang_detect_plugin
 from ovos_plugin_manager.templates.language import LanguageDetector
+from ovos_utils import classproperty
+from ovos_utils.log import LOG
+from typing import Set
 
 
 class VotingLangDetectPlugin(LanguageDetector):
@@ -8,7 +11,6 @@ class VotingLangDetectPlugin(LanguageDetector):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.weights = self.config.get("weights", {
-            "ovos-lang-detector-plugin-cld3": 0.8,
             "ovos-lang-detector-plugin-cld2": 0.8,
             "ovos-lang-detector-plugin-langdetect": 1.0,
             "ovos-lang-detector-plugin-fastlang": 1.0,
@@ -22,7 +24,7 @@ class VotingLangDetectPlugin(LanguageDetector):
         plugs = {}
         for plug_name in self.weights:
             try:
-                plugs[plug_name] =  load_lang_detect_plugin(plug_name)()
+                plugs[plug_name] = load_lang_detect_plugin(plug_name)()
             except:
                 raise RuntimeError(f"Failed to load {plug_name}")
         return plugs
@@ -34,15 +36,30 @@ class VotingLangDetectPlugin(LanguageDetector):
     def detect_probs(self, text):
         counts = {}
         for plug, voter in self.voters.items():
-            for k, v in voter.detect_probs(text).items():
-                if k not in counts:
-                    counts[k] = []
-                counts[k].append(v * self.weights[plug])
+            try:
+                for k, v in voter.detect_probs(text).items():
+                    if k not in counts:
+                        counts[k] = []
+                    counts[k].append(v * self.weights[plug])
+            except Exception as e:
+                LOG.debug(f"Lang detector '{plug}' raised an exception, skipping: {e}")
         if self.config.get("use_max"):
             counts = {k: max(v) for k, v in counts.items()}
         else:
             counts = {k: sum(v) / len(v) for k, v in counts.items()}
         return counts
+
+    @classproperty
+    def available_languages(cls) -> Set[str]:
+        """
+        Return languages supported by this detector implementation in this state.
+        This should be a set of languages this detector is capable of recognizing.
+        This property should be overridden by the derived class to advertise
+        what languages that engine supports.
+        Returns:
+            Set[str]: A set of language codes supported by this detector.
+        """
+        return set()  # TODO
 
 
 if __name__ == "__main__":
@@ -50,7 +67,6 @@ if __name__ == "__main__":
     weights = {
         "ovos-lang-detector-plugin-cld3": 0.8,
         "ovos-lang-detector-plugin-cld2": 0.8,
-        "ovos-lang-detector-plugin-lingua-podre": 1.0,
         "ovos-lang-detector-plugin-langdetect": 1.0,
         "ovos-lang-detector-plugin-fastlang": 1.0,
     }
