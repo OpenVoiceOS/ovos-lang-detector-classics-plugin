@@ -16,3 +16,4 @@ jobs:
       update_changelog: true
       publish_prerelease: true
       changelog_max_issues: 100
+      publish_pypi: true
