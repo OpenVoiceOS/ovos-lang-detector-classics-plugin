@@ -368,7 +368,7 @@ use_max: false
 1. Create a new module under `ovos_lang_detector_classics_plugin/`, subclassing
    `ovos_plugin_manager.templates.language.LanguageDetector`.
 2. Implement `detect(text: str) -> str` and `detect_probs(text: str) -> dict[str, float]`.
-3. Register the entry-point in `pyproject.toml` under `[project.entry-points."neon.plugin.lang.detect"]`.
+3. Register the entry-point in `pyproject.toml` under `[project.entry-points."opm.lang.detect"]`.
 4. Optionally add it to the `VotingLangDetectPlugin` default weights.
 
 Minimal skeleton:
@@ -438,11 +438,12 @@ pip install "ovos-lang-detector-classics-plugin[all]"    # + pycld2, gcld3, lang
 pip install pycld2 langdetect fastlang                   # pick individually
 ```
 
-`gcld3` is not in the `[all]` extra because its build is brittle on some platforms
-and requires protobuf headers. Install it separately after verifying it builds on
-your system:
+`gcld3`'s build is brittle on some platforms and requires protobuf headers. If
+installing `[all]` fails, install the other three backends directly and add `gcld3`
+separately once you've confirmed it builds on your system:
 
 ```bash
+pip install pycld2 langdetect fastlang
 pip install gcld3
 ```
 
