@@ -9,7 +9,7 @@ This package provides OVOS language-detection plugins for four classic algorithm
 
 The package also provides a `VotingLangDetectPlugin`. This plugin runs the other plugins and averages their predictions. Each model has a different bias, so the average is usually more accurate than any single model. See [docs/algorithms.md](docs/algorithms.md) for details on each algorithm and the voting logic.
 
-To use the plugins above, run `pip install ovos-lang-detector-plugin-voter[all]`. If you only need the voter plugin, skip the `[all]` flag.
+To use the plugins above, run `pip install ovos-lang-detector-classics-plugin[all]`. If you only need the voter plugin, skip the `[all]` flag.
 
 > **NOTE**: The voter plugin works with any lang-detect plugin, not only the ones listed above.
 
