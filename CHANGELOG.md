@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.0.2a2](https://github.com/OpenVoiceOS/ovos-lang-detector-classics-plugin/tree/0.0.2a2) (2026-09-16)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-lang-detector-classics-plugin/compare/0.0.2a1...0.0.2a2)
+
+**Merged pull requests:**
+
+- docs: fix pip install package name in README [\#22](https://github.com/OpenVoiceOS/ovos-lang-detector-classics-plugin/pull/22) ([JarbasAl](https://github.com/JarbasAl))
+- docs: fix entry-point group name and self-contradicting gcld3 extras claim [\#21](https://github.com/OpenVoiceOS/ovos-lang-detector-classics-plugin/pull/21) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.0.2a1](https://github.com/OpenVoiceOS/ovos-lang-detector-classics-plugin/tree/0.0.2a1) (2026-08-02)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-lang-detector-classics-plugin/compare/0.0.1a5...0.0.2a1)
