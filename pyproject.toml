@@ -23,7 +23,7 @@ all = [
     "fastlang",
 ]
 test = [
-    "pytest>=7.0.0,<9",
+    "pytest>=9.1.1,<10",
     "pytest-timeout>=2.0.0",
 ]
 
